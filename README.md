@@ -27,12 +27,12 @@ Adiciona regras de firewall
 [Adiciona chave SSH](https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys)
 
 Instalar Vagrant Google Provider
-	```
-	vagrant plugin install vagrant-google	
-	```
-	```
-	vagrant up --provider=google
-	```
+```
+vagrant plugin install vagrant-google	
+```
+```
+vagrant up --provider=google
+```
 [Reservar IP estático](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-external-ip-address#reserve_new_static)
 
 Menu de navegação -> Rede VPC -> Endereços IP Externos -> Reservar um endereço estático 
@@ -47,7 +47,7 @@ mv ~/.vagrant.d ~/.vagrant.d_old
 vagrant plugin install vagrant-google
 ```
 ```
-$ vagrant up --provider=google
+vagrant up --provider=google
 
 ```
 
