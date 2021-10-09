@@ -23,11 +23,13 @@ Vagrant.configure("2") do |config|
     google.machine_type = "n1-standard-1"
     google.zone = "us-central1-f"
     google.metadata = {'custom' => 'metadata', 'testing' => 'foobarbaz'}
+    google.tags = ['https-server', 'http-server']
 
     google.external_ip = $EXTERNAL_IP 
     override.ssh.username = $LOCAL_USER
     override.ssh.private_key_path = $LOCAL_SSH_KEY
   end
+  config.vm.provision "shell", path: "files/rancher-manager.sh"
 end
 
 
