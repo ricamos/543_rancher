@@ -1,14 +1,6 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-Vagrant.configure("2") do |config|
-  config.vm.box = "base"
-end
-
-# vagrant up --provider=google
-# VAGRANT_INFO=debug vagrant reload
-# Customize these global variables
-
 $GOOGLE_PROJECT_ID = "rancher-328402"
 $GOOGLE_CLIENT_EMAIL = "68764251533-compute@developer.gserviceaccount.com "
 $GOOGLE_JSON_KEY = "files/secret/rancher-328402-1a90efcca9c9.json"
