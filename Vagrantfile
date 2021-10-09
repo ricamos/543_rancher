@@ -14,6 +14,7 @@ $GOOGLE_CLIENT_EMAIL = "68764251533-compute@developer.gserviceaccount.com "
 $GOOGLE_JSON_KEY = "files/secret/rancher-328402-1a90efcca9c9.json"
 $LOCAL_USER = "vagrant"
 $LOCAL_SSH_KEY = "files/secret/key"
+$EXTERNAL_IP = "104.154.34.113"
 
 Vagrant.configure("2") do |config|
 
@@ -31,6 +32,7 @@ Vagrant.configure("2") do |config|
     google.zone = "us-central1-f"
     google.metadata = {'custom' => 'metadata', 'testing' => 'foobarbaz'}
 
+    google.external_ip = $EXTERNAL_IP 
     override.ssh.username = $LOCAL_USER
     override.ssh.private_key_path = $LOCAL_SSH_KEY
   end
