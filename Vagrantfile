@@ -42,18 +42,18 @@ Vagrant.configure("2") do |config|
         if "#{conf["EXTERNAL_IP"]}" != 'false' 
           google.external_ip = "#{conf["EXTERNAL_IP"]}"  
         end
-        
+
         override.ssh.username = $LOCAL_USER
         override.ssh.private_key_path = $LOCAL_SSH_KEY
 
-        if "#{name}" != 'rancher-manager' 
+      end
+
+      if "#{name}" != 'rancher-manager' 
             gce.vm.provision :shell, path: "files/docker.sh"
         else
             gce.vm.provision "shell", path: "files/rancher-manager.sh"
         end
-
-
-      end  
+        
     end
   end
   #config.vm.provision "shell", path: "files/rancher-manager.sh"
