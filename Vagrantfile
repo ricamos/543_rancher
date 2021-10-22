@@ -38,8 +38,11 @@ Vagrant.configure("2") do |config|
         google.autodelete_disk = true
         google.metadata = {'custom' => 'metadata', 'testing' => 'foobarbaz'}
         google.tags = ['https-server', 'http-server']
-      
-        google.external_ip = $EXTERNAL_IP 
+        
+        if "#{conf["EXTERNAL_IP"]}" != 'false' 
+          google.external_ip = "#{conf["EXTERNAL_IP"]}"  
+        end
+        
         override.ssh.username = $LOCAL_USER
         override.ssh.private_key_path = $LOCAL_SSH_KEY
 
