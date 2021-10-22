@@ -8,3 +8,9 @@ docker_install(){
 	apt-get update
 	apt-get install docker-ce docker-ce-cli containerd.io -y
 }
+
+main(){
+	docker_install
+}
+
+main
